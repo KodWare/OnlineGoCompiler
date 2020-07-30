@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>BetikSonu | OGCompiler</title>
+        <!--By @raifpy-->
+        <style>
+            .button{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-style: oblique;
+                background-color:#222;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                border-radius: 5px;
+                display: inline-block;
+                border: 2px solid white;
+                transition-duration: 1s;
+            }
+            .button:hover{
+                border: 2px solid lightgreen ;
+            }
+            .normal_align{
+                text-align: left;
+                align-self: auto;
+            }
+            .a{
+                color: white;
+                animation-duration: 1s;
+                
+            }
+            .a:hover {
+            color: lightgreen;
+            }
+
+        </style>
+        <script>
+            function gizle(id){
+                document.getElementById(id).style.display="none"
+            }
+            function gorunur(id){
+                document.getElementById(id).style.display="block"
+            }
+            function degistir(id){
+                var durum = document.getElementById(id).style.display
+                if (durum == "none"){
+                    document.getElementById(id).style.display = "block"
+                } else{
+                    document.getElementById(id).style.display = "none"
+                }
+            }
+        </script>
+
+    </head>
+    <body style="background-color: #222;color: azure; align-content: center;text-align: center;">
+        <h1 title="BetikSonu - Online Go Compiler ">BetikSonu | OGCompiler</h1><br>
+    
+        
+        <form action="/api/go" method="POST" enctype=multipart/form-data>
+            <label>DATA</label>
+            <input  class="button" type="file" id="data" name="data">
+            <br><br>
+            <label>GOOS</label>
+            <input type="text" id="goos" name="goos" value="linux" class="button">
+            
+            <br><br>
+            <label>ARCH</label>
+            <input type="text" id="goarch" name="goarch" value="amd64" class="button">
+            <br><br>
+            <input class="button" type="submit" value="Send">
+        </form>
+        <hr>
+        <div id="api" style="border: 2px solid #222 ;border-radius: 10px;background-color: white;color: black;display: none;">
+            <h2>Python</h2>
+            <script src="https://gist.github.com/raifpy/b890c204e1fe09841f17c43696edbfae.js"></script>
+            <h2>Bash</h2>
+            <script src="https://gist.github.com/raifpy/60370ec6a2780e0ce245181ab08f8e51.js"></script>
+            <h2>Golang</h2>
+            <script src="https://gist.github.com/raifpy/dee07b48189b499e8b1569e739ede9f2.js"></script>
+        </div><br>
+        <button class="button button" id="button" type="button" onclick="degistir('api')">Api Examples</button><br><br>
+        <hr>
+        <code><a class="a a" href="https://t.me/BetikSonu"  target="_blank">@BetikSonu</a> - <a class="a a" href="https://BetikSonu.org" target="_blank" >BetikSonu.org</a> | <a class="a a"href="https://t.me/raifpy" target="_blank" >@raifpy</a></code>
+    </body>
+</html>
