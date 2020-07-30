@@ -41,7 +41,6 @@ def apiGo():
     if not data:
         if "data" in flask.request.files and flask.request.files["data"].filename != '':
             data = flask.request.files["data"].filename
-            print("file kısmı = ",flask.request.files["data"])
             flask.request.files["data"].save("onbellek/"+data)
             try:
                 with open("onbellek/"+data) as oku:
