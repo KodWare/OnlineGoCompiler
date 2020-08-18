@@ -17,7 +17,7 @@ def home():
 
 @app.route("/api")
 def api():
-    return flask.redirect("/api/go")
+    return createResp(okfalse("Go /api/go"),404)
 
 @app.route("/api/go",methods=["GET","POST"])
 def apiGo():
@@ -104,7 +104,7 @@ def apiGo():
         files.remove("main.go")
         files = files[0]
         
-        return flask.jsonify({"ok":"true","url":"https://files.BetikSonu.org/"+date.strip("files/")+"/"+files})
+        return flask.jsonify({"ok":"true","url":"https://BetikSonu.org/gocompiler/files/"+date.strip("files/")+"/"+files})
     #return okfalse(str(data))
 
 app.run(debug=False,port=1010)
